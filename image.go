@@ -1,5 +1,7 @@
 package chatgpt
 
+// https://platform.openai.com/docs/api-reference/images
+
 type ImageSize string
 
 const (
@@ -16,7 +18,9 @@ const (
 )
 
 type ImageRequest struct {
-	Prompt         string         `json:"prompt"`
+	Image          string         `json:"image,omitempty"`
+	Mask           string         `json:"mask,omitempty"`
+	Prompt         string         `json:"prompt,omitempty"`
 	N              int            `json:"n,omitempty"` // 1-10
 	Size           ImageSize      `json:"size,omitempty"`
 	ResponseFormat ResponseFormat `json:"response_format,omitempty"`

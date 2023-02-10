@@ -148,6 +148,18 @@ func (c *ChatGPT) CreateImage(req ImageRequest) (resp ImageResponse, err error) 
 	return
 }
 
+func (c *ChatGPT) CreateImageEdit(req ImageRequest) (resp ImageResponse, err error) {
+	err = c.sendPostRequest("images/edits", req, &resp)
+
+	return
+}
+
+func (c *ChatGPT) CreateImageVariation(req ImageRequest) (resp ImageResponse, err error) {
+	err = c.sendPostRequest("images/variations", req, &resp)
+
+	return
+}
+
 func (c *ChatGPT) Reply(prompt string) string {
 	resp, err := c.CreateCompletion(CompletionRequest{
 		Model:       Gpt3TextDavinci003,

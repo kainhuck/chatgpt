@@ -7,7 +7,19 @@ import (
 
 func main() {
 	gpt := chatgpt.NewChatGPT()
-	ImageDemo(gpt)
+	CompletionDemo(gpt)
+}
+
+func CompletionDemo(gpt *chatgpt.ChatGPT) {
+	resp, err := gpt.CreateCompletion(chatgpt.CompletionRequest{
+		Model:     chatgpt.Gpt3TextDavinci003,
+		Prompt:    "路亚翘嘴怎么钓？",
+		MaxTokens: 512,
+	})
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(resp.Choices[0].RealText())
 }
 
 func EditDemo(gpt *chatgpt.ChatGPT) {
