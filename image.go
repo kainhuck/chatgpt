@@ -26,6 +26,7 @@ type ImageRequest struct {
 type ImageResponse struct {
 	Created int `json:"created"`
 	Data    []struct {
-		URL string `json:"url"`
+		URL     string `json:"url"`
+		B64Json string `json:"b64_json"`
 	} `json:"data"`
 }
