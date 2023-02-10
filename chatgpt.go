@@ -142,6 +142,12 @@ func (c *ChatGPT) CreateEdit(req EditRequest) (resp EditResponse, err error) {
 	return
 }
 
+func (c *ChatGPT) CreateImage(req ImageRequest) (resp ImageResponse, err error) {
+	err = c.sendPostRequest("images/generations", req, &resp)
+
+	return
+}
+
 func (c *ChatGPT) Reply(prompt string) string {
 	resp, err := c.CreateCompletion(CompletionRequest{
 		Model:       Gpt3TextDavinci003,
