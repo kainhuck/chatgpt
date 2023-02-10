@@ -31,4 +31,7 @@ const (
 	// Almost as capable as Davinci Codex, but slightly faster.
 	// This speed advantage may make it preferable for real-time applications.
 	CodexCodeCushman001 = "code-cushman-001"
+
+	Gpt3TextDavinciEdit001  = "text-davinci-edit-001"
+	CodexCodeDavinciEdit001 = "code-davinci-edit-001"
 )

@@ -7,17 +7,13 @@ import (
 
 func main() {
 	gpt := chatgpt.NewChatGPT()
-	//fmt.Println(gpt.Reply("Write a tagline for an ice cream shop. in chinese"))
-	models, err := gpt.ListModels()
+	resp, err := gpt.CreateEdit(chatgpt.EditRequest{
+		Model:       chatgpt.Gpt3TextDavinciEdit001,
+		Input:       "What day of the wek is it?",
+		Instruction: "Fix the spelling mistakes",
+	})
 	if err != nil {
 		panic(err)
 	}
-
-	fmt.Println(models)
-
-	m, err := gpt.RetrieveModel(chatgpt.Gpt3TextDavinci003)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(m)
+	fmt.Println(resp.Choices[0].RealText())
 }

@@ -136,6 +136,12 @@ func (c *ChatGPT) RetrieveModel(modelName string) (model Model, err error) {
 	return
 }
 
+func (c *ChatGPT) CreateEdit(req EditRequest) (resp EditResponse, err error) {
+	err = c.sendPostRequest("edits", req, &resp)
+
+	return
+}
+
 func (c *ChatGPT) Reply(prompt string) string {
 	resp, err := c.CreateCompletion(CompletionRequest{
 		Model:       Gpt3TextDavinci003,
