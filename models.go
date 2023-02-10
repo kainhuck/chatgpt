@@ -1,5 +1,7 @@
 package chatgpt
 
+// https://platform.openai.com/docs/api-reference/models
+
 type Permission struct {
 	CreatedAt          int64       `json:"created_at"`
 	ID                 string      `json:"id"`

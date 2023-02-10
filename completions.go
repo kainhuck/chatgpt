@@ -1,5 +1,7 @@
 package chatgpt
 
+// https://platform.openai.com/docs/api-reference/completions
+
 import "strings"
 
 type CompletionRequest struct {

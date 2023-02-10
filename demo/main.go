@@ -7,7 +7,18 @@ import (
 
 func main() {
 	gpt := chatgpt.NewChatGPT()
-	CompletionDemo(gpt)
+	ModelDemo(gpt)
+}
+
+func ModelDemo(gpt *chatgpt.ChatGPT) {
+	resp, err := gpt.ListModels()
+	if err != nil {
+		panic(err)
+	}
+
+	for _, model := range resp.Data {
+		fmt.Println(model.ID)
+	}
 }
 
 func CompletionDemo(gpt *chatgpt.ChatGPT) {

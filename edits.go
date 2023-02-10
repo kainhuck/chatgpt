@@ -1,5 +1,7 @@
 package chatgpt
 
+// https://platform.openai.com/docs/api-reference/edits
+
 type EditRequest struct {
 	Model       string  `json:"model"`
 	Input       string  `json:"input,omitempty"`
